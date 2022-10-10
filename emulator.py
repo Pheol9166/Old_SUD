@@ -21,7 +21,7 @@ class Emulator():
                 print("입력이 잘못되었습니다. 다시 시도해주세요.")
                 
 
-game = Hanlim("방한림전")
+game = Hanlim("新방한림전")
 emul = Emulator(game)
 emul.start()
 os.system('pause')
