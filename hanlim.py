@@ -1,4 +1,3 @@
-from typing import Callable
 from Gamepack import *
 
 # story of Bang hallim jeon
@@ -6,24 +5,6 @@ class Hanlim(Gamepack):
     def __init__(self, name: str) -> None:
         super().__init__(name)
     
-    def startscene(self, name: str) -> None:
-        with open(f"./source/{name}.txt", 'r', encoding='utf-8') as scene:
-            Hanlim.read(scene)
-            print("-" * 60)
-
-    def choice(self, left: Callable, right: Callable, third=None):
-        while (1):
-            answer = input("당신의 선택은: ")
-            if answer == "ㄱ":
-                left()
-            elif answer == "ㄴ":
-                right()
-            elif answer == "ㄷ":
-                third()
-            else:
-                print("다시 입력해주세요!")
-                print()
-
     def intro(self) -> None:
         self.startscene("intro")
         self.choice(self.writing, self.weaving)
