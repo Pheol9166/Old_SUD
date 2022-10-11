@@ -1,6 +1,7 @@
 from Gamepack import *
 
-# story of Bang hallim jeon
+"""__방한림전의 스토리입니다.__
+"""
 class Hanlim(Gamepack):
     def __init__(self, name: str) -> None:
         super().__init__(name)

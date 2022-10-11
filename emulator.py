@@ -1,12 +1,14 @@
 import os
 from hanlim import *
 
+"""_Gamepack을 실행시키는 에뮬레이터입니다._
+"""
 class Emulator():
     def __init__(self, gamepack: Gamepack) -> None:
-        # it gets Gamepack
         self.gamepack = gamepack 
     
-    # start the game
+    """_Emulator의 기본 화면을 실행하고 입력을 받아 Gamepack 실행 여부를 결정합니다._
+    """
     def start(self) -> None:
         print(self.gamepack.name)
         print("-" * 60)
@@ -24,4 +26,5 @@ class Emulator():
 game = Hanlim("新방한림전")
 emul = Emulator(game)
 emul.start()
-os.system('pause')
+
+os.system('pause') # pyinstaller 화면 유지
