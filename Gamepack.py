@@ -27,15 +27,14 @@ class Gamepack():
         try:
             base_path = sys._MEIPASS
         except Exception:
-            base_path = os.environ.get("_MEIPASS2", os.path.abspath("."))
+            base_path = os.path.abspath(".")
     
         return os.path.join(base_path, relative_path)
 
     """_파일을 읽고 read 함수로 출력합니다._ 
     """
     def startscene(self, name: str) -> None: 
-        file = self.resource_path(f"source\{name}.txt")
-        print(file)
+        file = self.resource_path(f"source\\{name}.txt")
 
         scene = open(file, 'r', encoding='utf-8')
         Gamepack.read(scene)
