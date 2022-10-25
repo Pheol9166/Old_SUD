@@ -38,12 +38,12 @@ class Gamepack():
 
         scene = open(file, 'r', encoding='utf-8')
         Gamepack.read(scene)
-        print("-" * 60)
         scene.close()
 
     """_사용자의 선택을 받습니다. 기본 2개, 최대 3개의 선택지를 입력받습니다._
     """
     def choice(self, left: Callable, right: Callable, third=None):
+        print("-" * 60)
         while (1):
             answer = input("당신의 선택은: ")
             if answer == "ㄱ":
