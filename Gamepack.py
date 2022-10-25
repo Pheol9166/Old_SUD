@@ -1,5 +1,7 @@
 from typing import TextIO
 from typing import Callable
+import sys
+import os
 
 """_Gamepack class for emulator_
 """
@@ -21,12 +23,23 @@ class Gamepack():
             time.sleep(0.5)
         print()
 
+    def resource_path(self, relative_path):
+        try:
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+    
+        return os.path.join(base_path, relative_path)
+
     """_파일을 읽고 read 함수로 출력합니다._ 
     """
     def startscene(self, name: str) -> None: 
-        with open(f"./source/{name}.txt", 'r', encoding='utf-8') as scene:
-            Gamepack.read(scene)
-            print("-" * 60)
+        file = self.resource_path(f"source\\{name}.txt")
+
+        scene = open(file, 'r', encoding='utf-8')
+        Gamepack.read(scene)
+        print("-" * 60)
+        scene.close()
 
     """_사용자의 선택을 받습니다. 기본 2개, 최대 3개의 선택지를 입력받습니다._
     """
